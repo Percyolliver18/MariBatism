@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Batizado da Mariana · 24 de outubro</title>
+<meta name="description" content="Com o coração cheio de alegria, convidamos você para o batizado da Mariana.">
+<meta property="og:title" content="Batizado da Mariana">
+<meta property="og:description" content="24 de outubro de 2026 — vai ser muito bom ter você com a gente.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300&family=Karla:wght@400;500;700&display=swap">
+<style>
+/* ============================================================
+   PALETA — rosa antigo, dourado e papel quente
+   ============================================================ */
+:root {
+  color-scheme: light;
+  --papel:        #FBF6F4;
+  --papel-fundo:  #F1E3E2;
+  --rosa:         #C0708A;
+  --rosa-claro:   #EFD9DF;
+  --rosa-fantasma:#F8ECEF;
+  --dourado:      #B08D57;
+  --tinta:        #3B2C33;
+  --tinta-suave:  #7A6670;
+  --linha:        #E7D3D8;
+  --verde:        #4C7C63;
+  --sombra:       0 1px 2px rgba(59,44,51,.05), 0 24px 60px -40px rgba(59,44,51,.45);
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--papel-fundo);
+  background-image:
+    radial-gradient(1100px 620px at 50% -10%, #FBF2F1 0%, rgba(251,242,241,0) 62%),
+    radial-gradient(760px 520px at 90% 105%, #F6E8E5 0%, rgba(246,232,229,0) 60%);
+  background-attachment: fixed;
+  color: var(--tinta);
+  font-family: "Karla", "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.papel {
+  max-width: 620px;
+  margin: 26px auto 40px;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: 3px;
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+.bloco { padding: 34px 30px; }
+@media (max-width: 520px) { .bloco { padding: 28px 20px; } }
+
+/* ---------- capa ---------- */
+.capa {
+  text-align: center;
+  padding: 44px 30px 38px;
+  background:
+    linear-gradient(180deg, var(--rosa-fantasma) 0%, var(--papel) 88%);
+  border-bottom: 1px solid var(--linha);
+  animation: subir .8s cubic-bezier(.2,.7,.3,1) both;
+}
+@keyframes subir { from { transform: translateY(10px); opacity: .55; } to { transform: none; opacity: 1; } }
+
+.retrato { position: relative; width: 236px; height: 236px; margin: 0 auto 26px; }
+.retrato svg.raios { position: absolute; inset: 0; width: 100%; height: 100%; }
+.retrato .moldura {
+  position: absolute;
+  inset: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--rosa);
+  background: var(--rosa-claro);
+  display: grid;
+  place-items: center;
+}
+.retrato .moldura img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.retrato .inicial {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 62px;
+  color: var(--rosa);
+  line-height: 1;
+  padding-bottom: 6px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  font-weight: 700;
+}
+h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(40px, 11vw, 62px);
+  line-height: 1.02;
+  margin: 10px 0 0;
+  color: var(--rosa);
+  letter-spacing: .005em;
+  text-wrap: balance;
+}
+.filete {
+  width: 118px;
+  height: 1px;
+  background: var(--linha);
+  margin: 18px auto;
+  position: relative;
+}
+.filete::after {
+  content: "";
+  position: absolute;
+  top: -2.5px; left: 50%;
+  width: 6px; height: 6px;
+  margin-left: -3px;
+  background: var(--dourado);
+  transform: rotate(45deg);
+}
+.data-capa {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  letter-spacing: .16em;
+  color: var(--tinta-suave);
+}
+.cruz { width: 42px; height: 62px; margin: 24px auto 0; display: block; }
+
+/* ---------- contagem ---------- */
+.contagem {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 22px 20px;
+  border-bottom: 1px solid var(--linha);
+  background: var(--papel);
+}
+.contagem div { text-align: center; }
+.contagem .n {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--rosa);
+  font-variant-numeric: tabular-nums;
+  display: block;
+}
+.contagem .r {
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  font-weight: 700;
+}
+
+/* ---------- texto ---------- */
+.convite-texto {
+  text-align: center;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+  line-height: 1.62;
+  color: var(--tinta);
+  max-width: 44ch;
+  margin: 0 auto;
+  text-wrap: pretty;
+}
+.versiculo {
+  text-align: center;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--tinta-suave);
+  margin: 22px auto 0;
+  max-width: 40ch;
+}
+.versiculo cite { display: block; font-style: normal; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--dourado); margin-top: 8px; font-family: "Karla", sans-serif; font-weight: 700; }
+
+h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--rosa);
+  text-align: center;
+  margin: 0 0 4px;
+}
+.secao { border-top: 1px solid var(--linha); }
+
+/* ---------- celebração ---------- */
+.detalhes { display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center; margin-top: 18px; }
+.detalhe .rot {
+  font-size: 10.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+.detalhe .val { font-size: 17px; }
+.detalhe .val strong { font-weight: 700; }
+.acoes { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
+
+.btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  cursor: pointer;
+  border: 1px solid var(--rosa);
+  background: var(--rosa);
+  color: #fff;
+  border-radius: 2px;
+  padding: 12px 22px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background .18s ease, color .18s ease;
+}
+.btn:hover { background: #A85B74; border-color: #A85B74; }
+.btn.linha { background: transparent; color: var(--rosa); }
+.btn.linha:hover { background: var(--rosa-fantasma); color: #A85B74; }
+.btn[disabled] { opacity: .55; cursor: progress; }
+:focus-visible { outline: 2px solid var(--dourado); outline-offset: 2px; }
+
+/* ---------- formulário ---------- */
+.rsvp { background: var(--rosa-fantasma); border-top: 1px solid var(--linha); }
+.form { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+.campo { display: flex; flex-direction: column; gap: 6px; }
+.campo > label, legend {
+  font-size: 10.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  font-weight: 700;
+  padding: 0;
+}
+input[type="text"], input[type="tel"], input[type="number"], textarea {
+  font: inherit;
+  color: var(--tinta);
+  background: #fff;
+  border: 1px solid var(--linha);
+  border-radius: 2px;
+  padding: 11px 12px;
+  width: 100%;
+}
+input::placeholder, textarea::placeholder { color: #B7A3AB; }
+textarea { min-height: 76px; resize: vertical; }
+fieldset { border: 0; margin: 0; padding: 0; }
+.escolhas { display: flex; gap: 10px; margin-top: 6px; }
+.escolha { flex: 1; position: relative; }
+.escolha input { position: absolute; opacity: 0; width: 0; height: 0; }
+.escolha span {
+  display: block;
+  text-align: center;
+  padding: 12px 8px;
+  background: #fff;
+  border: 1px solid var(--linha);
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--tinta-suave);
+  transition: all .16s ease;
+}
+.escolha input:checked + span { background: var(--rosa); border-color: var(--rosa); color: #fff; }
+.escolha input:focus-visible + span { outline: 2px solid var(--dourado); outline-offset: 2px; }
+.duplo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.aviso-erro {
+  background: #fff;
+  border: 1px solid var(--rosa);
+  border-left: 3px solid var(--rosa);
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+.aviso-erro a { color: var(--rosa); font-weight: 700; }
+.obrigado { text-align: center; padding: 8px 0 4px; }
+.obrigado .selo {
+  width: 54px; height: 54px; margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: #fff;
+  display: grid; place-items: center;
+  font-size: 26px; line-height: 1;
+}
+.obrigado h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500; font-size: 28px; color: var(--rosa); margin: 0 0 6px;
+}
+.rodape {
+  text-align: center;
+  padding: 26px 20px 34px;
+  color: var(--tinta-suave);
+  font-size: 13px;
+  border-top: 1px solid var(--linha);
+}
+.rodape .nomes { font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; color: var(--tinta); }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<main class="papel">
+
+  <!-- ============ CAPA ============ -->
+  <section class="capa">
+    <div class="retrato">
+      <svg class="raios" viewBox="0 0 236 236" aria-hidden="true"></svg>
+      <div class="moldura">
+        <img id="foto" alt="Mariana" hidden>
+        <span class="inicial" id="inicial">M</span>
+      </div>
+    </div>
+
+    <p class="eyebrow" id="ocasiao">Batizado</p>
+    <h1 id="nome-titulo">Mariana</h1>
+    <div class="filete"></div>
+    <p class="data-capa" id="data-capa">24 · 10 · 2026</p>
+
+    <svg class="cruz" viewBox="0 0 42 62" aria-hidden="true">
+      <path d="M21 3 L21 59 M6 19 L36 19" fill="none" stroke="#C0708A" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="21" cy="19" r="3.4" fill="#B08D57"/>
+    </svg>
+  </section>
+
+  <!-- ============ CONTAGEM ============ -->
+  <section class="contagem" aria-label="Contagem regressiva">
+    <div><span class="n" id="c-d">—</span><span class="r">Dias</span></div>
+    <div><span class="n" id="c-h">—</span><span class="r">Horas</span></div>
+    <div><span class="n" id="c-m">—</span><span class="r">Minutos</span></div>
+    <div><span class="n" id="c-s">—</span><span class="r">Segundos</span></div>
+  </section>
+
+  <!-- ============ CONVITE ============ -->
+  <section class="bloco">
+    <p class="convite-texto" id="texto-convite">
+      Com o coração cheio de alegria e gratidão, convidamos você para celebrar
+      conosco um momento muito especial: o batizado da nossa Mariana.
+    </p>
+    <p class="versiculo" id="versiculo">
+      “Deixai vir a mim as criancinhas, porque delas é o Reino de Deus.”
+      <cite>Marcos 10, 14</cite>
+    </p>
+  </section>
+
+  <!-- ============ CELEBRAÇÃO ============ -->
+  <section class="bloco secao">
+    <h2>Celebração</h2>
+    <div class="detalhes">
+      <div class="detalhe">
+        <span class="rot">Quando</span>
+        <span class="val"><strong id="d-data">—</strong></span>
+      </div>
+      <div class="detalhe">
+        <span class="rot">Horário</span>
+        <span class="val" id="d-hora">—</span>
+      </div>
+      <div class="detalhe">
+        <span class="rot">Onde</span>
+        <span class="val"><strong id="d-igreja">—</strong><br><span id="d-endereco">—</span></span>
+      </div>
+    </div>
+    <div class="acoes">
+      <a class="btn linha" id="btn-mapa" target="_blank" rel="noopener">Ver no mapa</a>
+      <a class="btn linha" id="btn-agenda" download="batizado-mariana.ics">Salvar na agenda</a>
+    </div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section class="bloco rsvp" id="confirmar">
+    <h2>Confirmar presença</h2>
+    <p style="text-align:center;color:var(--tinta-suave);font-size:14px;margin:6px auto 0;max-width:38ch">
+      Nos ajuda muito saber quem vem — confirme até <strong id="prazo">—</strong>.
+    </p>
+
+    <form class="form" id="form-rsvp" novalidate>
+      <div class="campo">
+        <label for="nome">Seu nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Nome e sobrenome" autocomplete="name" required>
+      </div>
+
+      <fieldset>
+        <legend>Você vai poder ir?</legend>
+        <div class="escolhas">
+          <label class="escolha">
+            <input type="radio" name="vai" value="Sim" checked>
+            <span>Sim, eu vou 💗</span>
+          </label>
+          <label class="escolha">
+            <input type="radio" name="vai" value="Não">
+            <span>Não vou conseguir</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="duplo" id="quantos">
+        <div class="campo">
+          <label for="adultos">Adultos (com você)</label>
+          <input type="number" id="adultos" name="adultos" value="1" min="0" max="20" inputmode="numeric">
+        </div>
+        <div class="campo">
+          <label for="criancas">Crianças</label>
+          <input type="number" id="criancas" name="criancas" value="0" min="0" max="20" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="telefone">WhatsApp <span style="text-transform:none;letter-spacing:0;color:var(--tinta-suave);font-weight:400">(opcional)</span></label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(31) 90000-0000" autocomplete="tel">
+      </div>
+
+      <div class="campo">
+        <label for="recado">Deixe um recado <span style="text-transform:none;letter-spacing:0;color:var(--tinta-suave);font-weight:400">(opcional)</span></label>
+        <textarea id="recado" name="recado" placeholder="Uma mensagem carinhosa para a Mariana"></textarea>
+      </div>
+
+      <div id="erro" hidden></div>
+      <button class="btn" type="submit" id="enviar">Enviar confirmação</button>
+    </form>
+
+    <div class="obrigado" id="obrigado" hidden>
+      <div class="selo" aria-hidden="true">✓</div>
+      <h3 id="obrigado-titulo">Confirmação recebida!</h3>
+      <p id="obrigado-texto" style="color:var(--tinta-suave);margin:0 auto;max-width:34ch"></p>
+      <p style="margin-top:18px"><button class="btn linha" type="button" id="outra">Confirmar outra pessoa</button></p>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <p class="nomes" id="rodape-nomes">Com carinho, a família da Mariana</p>
+    <p id="rodape-extra" style="margin:6px 0 0"></p>
+  </footer>
+</main>
+
+<script>
+/* ==================================================================
+   1) EDITE SOMENTE ESTE BLOCO — tudo que a página mostra sai daqui.
+   ================================================================== */
+const CONFIG = {
+  // --- a homenageada ---
+  ocasiao:     "Batizado",
+  nome:        "Mariana",
+  inicial:     "M",
+  foto:        "foto.jpg",          // coloque o arquivo na mesma pasta (ou cole um link https://...)
+
+  // --- data e hora (ANO, MÊS, DIA, HORA, MINUTO) — atenção: mês começa em 0, então 9 = outubro ---
+  quando:      new Date(2026, 9, 24, 10, 0),
+  duracaoHoras: 2,
+
+  // --- local ---
+  igreja:      "Igreja Nossa Senhora",
+  endereco:    "Rua Exemplo, 30 — Bairro, Cidade/MG",
+
+  // --- confirmação ---
+  prazo:       "24 de Outubro",
+  whatsapp:    "5531900000000",     // seu número com 55 + DDD, só números (usado se o envio falhar)
+
+  // --- textos do rodapé ---
+  rodapeNomes: "Com carinho, a família da Mariana",
+  rodapeExtra: "",                  // ex.: "Padrinhos: Léo e Bia"
+
+  // --- backend (cole aqui a URL do app da web do Apps Script) ---
+  endpoint:    "https://script.google.com/macros/s/AKfycbwuEITTw_eY-Iz8iENZZz4g0o863X6WWMJTp8LslSSUyX6XdCnsTxvH2P1KDZKnyJQ/exec"
+};
+/* ================= FIM DO BLOCO DE EDIÇÃO ========================= */
+
+
+(function () {
+  "use strict";
+
+  /* ---------- preencher a página ---------- */
+  const $ = (id) => document.getElementById(id);
+
+  $("ocasiao").textContent = CONFIG.ocasiao;
+  $("nome-titulo").textContent = CONFIG.nome;
+  $("inicial").textContent = CONFIG.inicial || CONFIG.nome.charAt(0);
+  $("prazo").textContent = CONFIG.prazo;
+  $("d-igreja").textContent = CONFIG.igreja;
+  $("d-endereco").textContent = CONFIG.endereco;
+  $("rodape-nomes").textContent = CONFIG.rodapeNomes;
+  $("rodape-extra").textContent = CONFIG.rodapeExtra;
+  document.title = CONFIG.ocasiao + " da " + CONFIG.nome;
+
+  const dt = CONFIG.quando;
+  const doisDig = (n) => String(n).padStart(2, "0");
+  $("data-capa").textContent = doisDig(dt.getDate()) + " · " + doisDig(dt.getMonth() + 1) + " · " + dt.getFullYear();
+  $("d-data").textContent = dt.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  $("d-hora").textContent = doisDig(dt.getHours()) + "h" + (dt.getMinutes() ? doisDig(dt.getMinutes()) : "");
+
+  /* foto: só aparece se carregar de verdade; senão fica a inicial */
+  if (CONFIG.foto) {
+    const img = $("foto");
+    img.addEventListener("load", function () { img.hidden = false; $("inicial").hidden = true; });
+    img.alt = CONFIG.nome;
+    img.src = CONFIG.foto;
+  }
+
+  /* raios de luz ao redor do retrato */
+  (function raios() {
+    const svg = document.querySelector("svg.raios");
+    const cx = 118, cy = 118, r1 = 96, r2 = 116;
+    for (let i = 0; i < 72; i++) {
+      const ang = (i / 72) * Math.PI * 2;
+      const comp = i % 3 === 0 ? r2 : r2 - 9;
+      const l = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      l.setAttribute("x1", (cx + Math.cos(ang) * r1).toFixed(2));
+      l.setAttribute("y1", (cy + Math.sin(ang) * r1).toFixed(2));
+      l.setAttribute("x2", (cx + Math.cos(ang) * comp).toFixed(2));
+      l.setAttribute("y2", (cy + Math.sin(ang) * comp).toFixed(2));
+      l.setAttribute("stroke", i % 3 === 0 ? "#C0708A" : "#E3B7C3");
+      l.setAttribute("stroke-width", "1");
+      l.setAttribute("stroke-linecap", "round");
+      svg.appendChild(l);
+    }
+  })();
+
+  /* ---------- contagem regressiva ---------- */
+  (function contar() {
+    const alvo = dt.getTime();
+    function tick() {
+      let dif = Math.max(0, alvo - Date.now());
+      const d = Math.floor(dif / 86400000); dif -= d * 86400000;
+      const h = Math.floor(dif / 3600000);  dif -= h * 3600000;
+      const m = Math.floor(dif / 60000);    dif -= m * 60000;
+      const s = Math.floor(dif / 1000);
+      $("c-d").textContent = d;
+      $("c-h").textContent = doisDig(h);
+      $("c-m").textContent = doisDig(m);
+      $("c-s").textContent = doisDig(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  /* ---------- mapa e agenda ---------- */
+  $("btn-mapa").href = "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(CONFIG.igreja + " " + CONFIG.endereco);
+
+  (function agenda() {
+    const fim = new Date(dt.getTime() + (CONFIG.duracaoHoras || 2) * 3600000);
+    const utc = (x) => x.getUTCFullYear() + doisDig(x.getUTCMonth() + 1) + doisDig(x.getUTCDate()) +
+      "T" + doisDig(x.getUTCHours()) + doisDig(x.getUTCMinutes()) + "00Z";
+    const ics = [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//convite//pt-BR",
+      "BEGIN:VEVENT",
+      "UID:" + Date.now() + "@convite",
+      "DTSTAMP:" + utc(new Date()),
+      "DTSTART:" + utc(dt),
+      "DTEND:" + utc(fim),
+      "SUMMARY:" + CONFIG.ocasiao + " da " + CONFIG.nome,
+      "LOCATION:" + (CONFIG.igreja + " - " + CONFIG.endereco).replace(/,/g, "\\,"),
+      "END:VEVENT", "END:VCALENDAR"
+    ].join("\r\n");
+    $("btn-agenda").href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+  })();
+
+  /* ---------- formulário ---------- */
+  const form = $("form-rsvp");
+  const quantos = $("quantos");
+  const erro = $("erro");
+  const botao = $("enviar");
+
+  function vaiSelecionado() {
+    const el = form.querySelector('input[name="vai"]:checked');
+    return el ? el.value : "Sim";
+  }
+
+  form.querySelectorAll('input[name="vai"]').forEach(function (r) {
+    r.addEventListener("change", function () {
+      quantos.hidden = vaiSelecionado() !== "Sim";
+    });
+  });
+
+  function mostrarErro(msg) {
+    erro.innerHTML = "";
+    const cx = document.createElement("div");
+    cx.className = "aviso-erro";
+    cx.appendChild(document.createTextNode(msg + " "));
+    if (CONFIG.whatsapp && CONFIG.whatsapp.replace(/\D/g, "").length >= 12) {
+      const a = document.createElement("a");
+      a.href = "https://wa.me/" + CONFIG.whatsapp.replace(/\D/g, "") +
+        "?text=" + encodeURIComponent("Oi! Confirmando presença no " + CONFIG.ocasiao.toLowerCase() + " da " + CONFIG.nome + ": ");
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = "Confirmar pelo WhatsApp";
+      cx.appendChild(a);
+    }
+    erro.appendChild(cx);
+    erro.hidden = false;
+  }
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    erro.hidden = true;
+
+    const nome = $("nome").value.trim();
+    if (!nome) { $("nome").focus(); mostrarErro("Escreva seu nome para confirmar."); return; }
+
+    const vai = vaiSelecionado();
+    const dados = new URLSearchParams({
+      nome: nome,
+      vai: vai,
+      adultos: vai === "Sim" ? String(Math.max(0, parseInt($("adultos").value, 10) || 0)) : "0",
+      criancas: vai === "Sim" ? String(Math.max(0, parseInt($("criancas").value, 10) || 0)) : "0",
+      telefone: $("telefone").value.trim(),
+      recado: $("recado").value.trim(),
+      evento: CONFIG.ocasiao + " da " + CONFIG.nome
+    });
+
+    if (!CONFIG.endpoint || CONFIG.endpoint.indexOf("http") !== 0) {
+      mostrarErro("O envio ainda não foi configurado nesta página.");
+      return;
+    }
+
+    botao.disabled = true;
+    botao.textContent = "Enviando…";
+
+    fetch(CONFIG.endpoint, { method: "POST", body: dados })
+      .then(function (r) { return r.json().catch(function () { return { ok: true }; }); })
+      .then(function (res) {
+        if (res && res.ok === false) throw new Error(res.erro || "falhou");
+        sucesso(nome, vai);
+      })
+      .catch(function () {
+        /* alguns navegadores bloqueiam a leitura da resposta; tenta gravar mesmo assim */
+        fetch(CONFIG.endpoint, { method: "POST", mode: "no-cors", body: dados })
+          .then(function () { sucesso(nome, vai); })
+          .catch(function () {
+            botao.disabled = false;
+            botao.textContent = "Enviar confirmação";
+            mostrarErro("Não consegui enviar agora — tente de novo em instantes ou fale com a gente.");
+          });
+      });
+  });
+
+  function sucesso(nome, vai) {
+    form.hidden = true;
+    $("obrigado").hidden = false;
+    const primeiro = nome.split(" ")[0];
+    if (vai === "Sim") {
+      $("obrigado-titulo").textContent = "Que alegria, " + primeiro + "!";
+      $("obrigado-texto").textContent = "Sua presença está confirmada. A gente se vê no dia " + dt.getDate() + "!";
+    } else {
+      $("obrigado-titulo").textContent = "Obrigado por avisar, " + primeiro;
+      $("obrigado-texto").textContent = "Vamos sentir sua falta — você estará no nosso coração nesse dia.";
+    }
+  }
+
+  $("outra").addEventListener("click", function () {
+    form.reset();
+    quantos.hidden = false;
+    form.hidden = false;
+    $("obrigado").hidden = true;
+    botao.disabled = false;
+    botao.textContent = "Enviar confirmação";
+    $("nome").focus();
+  });
+})();
+</script>
+</body>
+</html>
