@@ -432,7 +432,7 @@ fieldset { border: 0; margin: 0; padding: 0; }
   </section>
 
     <!-- ============ PARA O DIA ============ -->
-  <section class="bloco secao">
+    <section class="bloco secao" id="para-o-dia" hidden>
     <h2>Para o dia</h2>
     <div class="detalhes">
       <div class="detalhe">
@@ -476,7 +476,7 @@ const CONFIG = {
 
   // --- confirmação ---
   prazo:       "24 de Outubro",
-  whatsapp:    "5538988653930",     // seu número com 55 + DDD, só números (usado se o envio falhar)
+  whatsapp:    "5538992106121",     // seu número com 55 + DDD, só números (usado se o envio falhar)
 
   // --- textos do rodapé ---
   rodapeNomes: "Com carinho, a família da Mariana",
@@ -713,6 +713,15 @@ const CONFIG = {
   function sucesso(nome, vai) {
     form.hidden = true;
     $("obrigado").hidden = false;
+         if (vai === "Sim") {
+      const extra = document.getElementById("para-o-dia");
+      if (extra) {
+        extra.hidden = false;
+        setTimeout(function () {
+          extra.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 500);
+      }
+    }
     const primeiro = nome.split(" ")[0];
     if (vai === "Sim") {
       $("obrigado-titulo").textContent = "Que alegria, " + primeiro + "!";
