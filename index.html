@@ -500,23 +500,77 @@ const CONFIG = {
     img.src = CONFIG.foto;
   }
 
-  /* raios de luz ao redor do retrato */
-  (function raios() {
-    const svg = document.querySelector("svg.raios");
-    const cx = 118, cy = 118, r1 = 96, r2 = 116;
-    for (let i = 0; i < 72; i++) {
-      const ang = (i / 72) * Math.PI * 2;
-      const comp = i % 3 === 0 ? r2 : r2 - 9;
-      const l = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      l.setAttribute("x1", (cx + Math.cos(ang) * r1).toFixed(2));
-      l.setAttribute("y1", (cy + Math.sin(ang) * r1).toFixed(2));
-      l.setAttribute("x2", (cx + Math.cos(ang) * comp).toFixed(2));
-      l.setAttribute("y2", (cy + Math.sin(ang) * comp).toFixed(2));
-      l.setAttribute("stroke", i % 3 === 0 ? "#C0708A" : "#E3B7C3");
-      l.setAttribute("stroke-width", "1");
-      l.setAttribute("stroke-linecap", "round");
-      svg.appendChild(l);
+   /* guirlanda de ramos e flores ao redor do retrato */
+  (function guirlanda() {
+    const NS = "http://www.w3.org/2000/svg";
+    const VERDE      = "#93A87F";   // folha
+    const VERDE_CLARO= "#B5C7A0";   // folha alternada
+    const CAULE      = "#8A9E77";   // galho
+    const PETALA     = "#E8BDC9";   // pétala
+    const MIOLO      = "#C79A56";   // miolo dourado
+
+    const cx = 118, cy = 118, R = 101;   // raio onde o galho corre
+    const A0 = 98, A1 = -64;             // de baixo (6h) até quase o topo
+    const rad = (g) => g * Math.PI / 180;
+    const P = (g, r) => [cx + Math.cos(rad(g)) * r, cy + Math.sin(rad(g)) * r];
+    const n = (nome, attrs) => {
+      const e = document.createElementNS(NS, nome);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    };
+
+    function flor(x, y, r) {
+      const g = n("g", { transform: "translate(" + x.toFixed(1) + " " + y.toFixed(1) + ")" });
+      for (let i = 0; i < 5; i++) {
+        g.appendChild(n("ellipse", {
+          cx: 0, cy: (-r * 0.58).toFixed(2),
+          rx: (r * 0.40).toFixed(2), ry: (r * 0.58).toFixed(2),
+          transform: "rotate(" + (i * 72) + ")",
+          fill: PETALA
+        }));
+      }
+      g.appendChild(n("circle", { cx: 0, cy: 0, r: (r * 0.27).toFixed(2), fill: MIOLO }));
+      return g;
     }
+
+    function ramo() {
+      const g = n("g", {});
+      const [x0, y0] = P(A0, R), [x1, y1] = P(A1, R);
+      g.appendChild(n("path", {
+        d: "M" + x0.toFixed(1) + " " + y0.toFixed(1) +
+           " A " + R + " " + R + " 0 0 0 " + x1.toFixed(1) + " " + y1.toFixed(1),
+        fill: "none", stroke: CAULE, "stroke-width": 1.1, "stroke-linecap": "round"
+      }));
+
+      const FOLHAS = 17;
+      for (let i = 0; i <= FOLHAS; i++) {
+        const t = i / FOLHAS;
+        const ang = A0 + (A1 - A0) * t;
+        const lado = i % 2 ? 1 : -1;
+        const [x, y] = P(ang, R + lado * 7.4);
+        const tam = 8.4 - Math.abs(t - 0.42) * 5.4;      // folhas maiores no meio do ramo
+        const giro = ang + 90 + lado * 34;               // acompanha a curva
+        g.appendChild(n("ellipse", {
+          cx: x.toFixed(1), cy: y.toFixed(1),
+          rx: tam.toFixed(2), ry: (tam * 0.40).toFixed(2),
+          transform: "rotate(" + giro.toFixed(1) + " " + x.toFixed(1) + " " + y.toFixed(1) + ")",
+          fill: i % 3 === 0 ? VERDE_CLARO : VERDE
+        }));
+      }
+
+      [[0.18, 5.6], [0.52, 7.6], [0.84, 5.0]].forEach(function (f) {
+        const ang = A0 + (A1 - A0) * f[0];
+        const [x, y] = P(ang, R + 8);
+        g.appendChild(flor(x, y, f[1]));
+      });
+      return g;
+    }
+
+    const svg = document.querySelector("svg.raios");
+    svg.appendChild(ramo());                    // lado direito
+    const espelho = ramo();                     // lado esquerdo (espelhado)
+    espelho.setAttribute("transform", "translate(236 0) scale(-1 1)");
+    svg.appendChild(espelho);
   })();
 
   /* ---------- contagem regressiva ---------- */
