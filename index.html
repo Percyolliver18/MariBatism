@@ -367,7 +367,7 @@ fieldset { border: 0; margin: 0; padding: 0; }
     </div>
     <div class="acoes">
       <a class="btn linha" id="btn-mapa" target="_blank" rel="noopener">Ver no mapa</a>
-      <a class="btn linha" id="btn-agenda" download="batizado-mariana.ics">Salvar na agenda</a>
+      <a class="btn linha" id="btn-agenda" download="batizado-mariana.ics" hidden>Salvar na agenda</a>
     </div>
   </section>
 
@@ -467,7 +467,7 @@ const CONFIG = {
   foto:        "foto.jpg",          // coloque o arquivo na mesma pasta (ou cole um link https://...)
 
   // --- data e hora (ANO, MÊS, DIA, HORA, MINUTO) — atenção: mês começa em 0, então 9 = outubro ---
-  quando:      new Date(2026, 9, 24, 10, 0),
+  quando:      new Date(2026, 9, 24, 10, 30),
   duracaoHoras: 2,
 
   // --- local ---
