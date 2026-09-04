@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light only">
 <title>Batizado da Mariana · 24 de outubro</title>
 <meta name="description" content="Com o coração cheio de alegria, convidamos você para o batizado da Mariana.">
 <meta property="og:title" content="Batizado da Mariana">
@@ -17,7 +16,7 @@
    PALETA — rosa antigo, dourado e papel quente
    ============================================================ */
 :root {
-  color-scheme: only light;
+  color-scheme: light;
   --papel:        #FBF6F4;
   --papel-fundo:  #F1E3E2;
   --rosa:         #C0708A;
@@ -432,6 +431,24 @@ fieldset { border: 0; margin: 0; padding: 0; }
     </div>
   </section>
 
+    <!-- ============ PARA O DIA ============ -->
+  <section class="bloco secao">
+    <h2>Para o dia</h2>
+    <div class="detalhes">
+      <div class="detalhe">
+        <span class="rot">Dress Code</span>
+        <span class="val"><strong>Tons neutros</strong></span>
+      </div>
+      <div class="detalhe">
+        <span class="rot">Depois da missa</span>
+        <span class="val">Vamos cantar parabéns para a Mariana<br>no <strong>Uai Tchê Avenida</strong></span>
+      </div>
+    </div>
+    <div class="acoes">
+      <a class="btn linha" href="https://www.google.com/maps/search/?api=1&amp;query=Uai%20Tch%C3%AA%20Avenida" target="_blank" rel="noopener">Ver o Uai Tchê no mapa</a>
+    </div>
+  </section>
+
   <footer class="rodape">
     <p class="nomes" id="rodape-nomes">Com carinho, a família da Mariana</p>
     <p id="rodape-extra" style="margin:6px 0 0"></p>
@@ -450,7 +467,7 @@ const CONFIG = {
   foto:        "foto.jpg",          // coloque o arquivo na mesma pasta (ou cole um link https://...)
 
   // --- data e hora (ANO, MÊS, DIA, HORA, MINUTO) — atenção: mês começa em 0, então 9 = outubro ---
-  quando:      new Date(2026, 9, 24, 10, 30),
+  quando:      new Date(2026, 9, 24, 10, 0),
   duracaoHoras: 2,
 
   // --- local ---
@@ -501,7 +518,7 @@ const CONFIG = {
     img.src = CONFIG.foto;
   }
 
-   /* guirlanda de ramos e flores ao redor do retrato */
+    /* guirlanda de ramos e flores ao redor do retrato */
   (function guirlanda() {
     const NS = "http://www.w3.org/2000/svg";
     const VERDE      = "#93A87F";   // folha
